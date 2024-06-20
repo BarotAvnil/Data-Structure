@@ -26,7 +26,9 @@ public class delete_num_at_given_location {
                 index++;
             }
         }
-        for (int i = 0; i < n - 1; i++)
+        for (int i = 0; i < n - 1; i++) {
             System.out.print(temp[i] + " ");
+        }
+
     }
 }
