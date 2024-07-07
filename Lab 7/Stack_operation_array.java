@@ -10,9 +10,16 @@ public class Stack_operation_array {
         stack.push(30);
         stack.push(40);
         stack.push(50);
-        stack.pop();
-        stack.peep(2);
+        stack.push(60);
+        stack.push(70);
+        stack.push(80);
+        stack.push(90);
+        stack.push(100);
         stack.display();
+        stack.pop();
+        stack.peep(8);
+        stack.change();
+
 
     }
 
@@ -21,6 +28,8 @@ public class Stack_operation_array {
 class Stack_operation {
     int[] arr;
     int top;
+    int size;
+    Scanner sc = new Scanner(System.in);
 
     Stack_operation(int size) {
         arr = new int[size];
@@ -60,11 +69,30 @@ class Stack_operation {
         if (top - i + 1 <= 0) {
             System.out.println("Stack Underflow");
         } else {
-            System.out.println( "PEEP"+ arr[top - i + 1]);
+            System.out.println("PEEP :: " + arr[top - i + 1]);
         }
     }
-    public void change(){
-        
+
+    public void change() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+        } else {
+            System.out.println("Enter the index of the element you want to change");
+            int index = sc.nextInt();
+            System.out.println("Enter the new element");
+            int new_element = sc.nextInt();
+            if (index > top + 1) {
+                System.out.println("Index out of range");
+            } else {
+                arr[index - 1] = new_element;
+                System.out.println("Element changed successfully");
+            }
+            System.out.print("After Changing Element ::");
+            for (int i = 0; i <= top; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
