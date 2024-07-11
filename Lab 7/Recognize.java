@@ -3,9 +3,14 @@ import java.util.*;
 public class Recognize {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter String");
+        System.out.println("Enter String :::");
         String str = sc.nextLine();
-        CheckString(str);
+        if(CheckString(str)){
+            System.out.println("Valid String");
+        }        
+        else{
+            System.out.println("Invalid String");
+        }
     }
     public static boolean CheckString(String str) {
         Stack<Character> stack = new Stack<Character>();
